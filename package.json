@@ -1,0 +1,13 @@
+{
+  "name": "baqueano-sitio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio oficial del álbum de figuritas Baqueano.",
+  "scripts": {
+    "test": "node --test tests/site.test.mjs",
+    "check": "node --check script.js && node --test tests/site.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
