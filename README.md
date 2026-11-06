@@ -1,6 +1,6 @@
 # Baqueano
 
-Sitio oficial del álbum de figuritas Baqueano, dedicado a la fauna autóctona del Uruguay.
+Sitio del álbum de figuritas Baqueano, dedicado a la fauna autóctona del Uruguay. Incluye dos pistas para reconocer aves a partir de las fotos de las figuritas, una actividad en familia y la presentación de la Red de Chasques.
 
 ## Ejecución local
 
@@ -14,10 +14,7 @@ npm test
 
 ## Publicación en GitHub Pages
 
-1. Publicar este repositorio en GitHub.
-2. En la configuración del repositorio, habilitar GitHub Pages desde la rama principal y la carpeta raíz.
-3. Confirmar que el dominio personalizado sea `elbaqueno.uy`; el archivo `CNAME` ya está incluido.
-4. Configurar el DNS en Cloudflare según los valores informados por GitHub Pages y validar HTTPS antes del lanzamiento público.
+GitHub Pages publica la carpeta raíz de la rama `main` en [mdente.github.io/elbaqueano](https://mdente.github.io/elbaqueano/). Las imágenes, los estilos y la fuente usan rutas relativas para funcionar tanto allí como en un dominio propio.
 
 No se deben incorporar credenciales, tokens ni certificados al repositorio.
 
@@ -26,4 +23,3 @@ No se deben incorporar credenciales, tokens ni certificados al repositorio.
 - Canales oficiales de contacto.
 - Enlaces a redes sociales.
 - Información comercial o puntos de venta.
-- Autorización final para publicar fotografías con menores.

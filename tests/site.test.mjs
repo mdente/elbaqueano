@@ -21,7 +21,7 @@ test("la portada declara español de Uruguay y metadatos propios", () => {
 });
 
 test("la navegación conduce a las secciones principales", () => {
-  for (const id of ["que-es", "album", "experiencia", "contacto"]) {
+  for (const id of ["que-es", "album", "experiencia", "chasques", "contacto"]) {
     assert.match(html, new RegExp(`href="#${id}"`, "i"));
     assert.match(html, new RegExp(`id="${id}"`, "i"));
   }
@@ -50,11 +50,26 @@ test("todas las imágenes locales referenciadas existen", () => {
   }
 });
 
-test("los recursos y el dominio de GitHub Pages están configurados", () => {
+test("los recursos funcionan desde la ruta del proyecto en GitHub Pages", () => {
   assert.match(html, /href="styles\.css"/i);
   assert.match(html, /src="script\.js"/i);
   assert.match(html, /href="favicon\.svg"/i);
-  assert.equal(readProjectFile("CNAME").trim(), "elbaqueno.uy");
+  for (const [, recurso] of html.matchAll(/(?:src|href)="([^"#][^"]*)"/g)) {
+    assert.ok(!recurso.startsWith("/"), recurso);
+    assert.ok(existsSync(resolve(projectRoot, recurso)), recurso);
+  }
+  for (const [, recurso] of css.matchAll(/url\("([^"]+)"\)/g)) {
+    assert.ok(existsSync(resolve(projectRoot, recurso)), recurso);
+  }
+});
+
+test("ambas pistas revelan su respuesta y enlazan la figurita original", () => {
+  const pistas = [...html.matchAll(/<details>([\s\S]*?)<\/details>/g)];
+  assert.equal(pistas.length, 2);
+  for (const [i, especie] of ["chaja", "churrinche"].entries()) {
+    assert.match(pistas[i][1], /<summary>[\s\S]*?Ver quién es[\s\S]*?<\/summary>/);
+    assert.ok(pistas[i][1].includes(`href="assets/images/figurita-${especie}.jpeg"`));
+  }
 });
 
 test("la hoja de estilos contempla teléfonos y movimiento reducido", () => {

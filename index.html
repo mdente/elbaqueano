@@ -1,282 +1,138 @@
 <!doctype html>
 <html lang="es-UY">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Baqueano es un álbum de figuritas para descubrir, jugar y aprender con la fauna autóctona del Uruguay."
-    />
-    <meta name="theme-color" content="#173f2d" />
-    <title>Baqueano — Álbum de figuritas de la fauna uruguaya</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <a class="skip-link" href="#contenido">Saltar al contenido</a>
-
-    <header class="site-header" data-header>
-      <div class="shell header-inner">
-        <a class="brand" href="#inicio" aria-label="Baqueano, volver al comienzo">
-          <img
-            src="assets/images/logo-baqueano.jpeg"
-            alt=""
-            width="54"
-            height="54"
-          />
-          <span>
-            <strong>Baqueano</strong>
-            <small>Fauna autóctona</small>
-          </span>
-        </a>
-
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="navegacion-principal"
-          aria-label="Abrir menú"
-          data-nav-toggle
-        >
-          <span></span><span></span><span></span>
-        </button>
-
-        <nav
-          class="site-nav"
-          id="navegacion-principal"
-          aria-label="Navegación principal"
-          data-nav
-        >
-          <a href="#que-es">¿Qué es?</a>
-          <a href="#album">El álbum</a>
-          <a href="#experiencia">La experiencia</a>
-          <a class="nav-cta" href="#contacto">Contacto</a>
-        </nav>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Abrí Baqueano, el álbum de figuritas de la fauna uruguaya. Jugá a reconocer dos aves y llevá el juego a casa o a la escuela.">
+  <meta name="theme-color" content="#faf6e9">
+  <title>Baqueano · Álbum de figuritas de la fauna uruguaya</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <svg aria-hidden="true" class="symbols" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+      <symbol id="paw" viewBox="0 0 24 24"><g fill="currentColor" stroke="none"><ellipse cx="5" cy="10" rx="2.35" ry="3.3" transform="rotate(-25 5 10)"/><ellipse cx="9" cy="5.5" rx="2.25" ry="3.1"/><ellipse cx="15" cy="5.5" rx="2.25" ry="3.1" transform="rotate(10 15 5.5)"/><ellipse cx="19.3" cy="10" rx="2.25" ry="3.2" transform="rotate(25 19.3 10)"/><path d="M5 18c.3-2.2 2.7-3 3.9-5 1.8-3 4.7-3.2 6.6-.2 1.8 2.4 4.4 3.9 3.9 6.5-.5 2.4-2.7 3-5.4 1.7-1.6-.8-2.6-.7-4.5 0C6.6 22.1 4.5 20.8 5 18Z"/></g></symbol>
+      <symbol id="book" viewBox="0 0 24 24"><path d="M12 6C9 4.5 6 4 2.5 5v14c3-.8 6-.3 9.5 1.2 3.5-1.5 6.5-2 9.5-1.2V5C18 4 15 4.5 12 6Zm0 0v14"/></symbol>
+      <symbol id="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.1"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4.2 4.2l2.2 2.2m11 11 2.3 2.3M4.2 19.8l2.2-2.2m11-11 2.3-2.3"/></symbol>
+      <symbol id="share" viewBox="0 0 24 24"><path d="M12 16V2m-5 5 5-5 5 5M4 13v7h16v-7"/></symbol>
+    </defs>
+  </svg>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="masthead" id="inicio">
+    <div class="wrap nav-row">
+      <a class="brand" href="#inicio" aria-label="Baqueano, inicio">
+        <img src="assets/images/logo-baqueano.jpeg" alt="" width="52" height="52">
+        <span><strong>Baqueano</strong><small>Álbum de figuritas</small></span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-controls="nav" aria-expanded="false" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+      <nav id="nav" data-nav aria-label="Navegación principal">
+        <a href="#que-es">El álbum</a><a href="#experiencia">En familia</a><a href="#chasques">Red de Chasques</a>
+        <a class="nav-play" href="#album"><svg class="icon"><use href="#paw"/></svg> A jugar</a>
+      </nav>
+    </div>
+  </header>
+  <main id="contenido">
+    <section class="hero paper" aria-labelledby="titulo">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="overline"><svg class="icon sun"><use href="#sun"/></svg> Fauna del Uruguay</p>
+          <h1 id="titulo">¿Qué bicho<br><em>te tocó?</em></h1>
+          <p class="lead">Abrí un sobre de Baqueano y fijate quién salió. Capaz que ese pájaro que ves en la plaza ya tiene un lugar en tu álbum.</p>
+          <div class="hero-links">
+            <a class="button primary" href="#album">Jugá con las figuritas <svg class="icon"><use href="#arrow"/></svg></a>
+            <a class="ink-link" href="#que-es">Conocé el álbum</a>
+          </div>
+        </div>
+        <div class="keepsake">
+          <div class="green-sheet" aria-hidden="true"></div>
+          <figure class="hero-print">
+            <span class="tape" aria-hidden="true"></span>
+            <img src="assets/images/hero-monte.jpg" width="920" height="1151" alt="Una gurisa muestra su álbum Baqueano, sentada en una rama en el monte." fetchpriority="high">
+            <figcaption><span>Una tarde en el monte</span><svg class="icon"><use href="#sun"/></svg></figcaption>
+          </figure>
+          <a class="cover-cutout" href="#que-es" aria-label="Conocé el álbum Baqueano">
+            <img src="assets/images/portada-album.jpeg" width="1166" height="1554" alt="Tapa del álbum Baqueano">
+          </a>
+          <svg viewBox="0 0 80 58" class="pencil-dash" aria-hidden="true"><path d="M77 5C65 22 66 45 45 48c-19 3-22-15-13-21 12-9 23 14 5 20-7 3-16 3-29 1m9-9L7 48l12 6"/></svg>
+        </div>
       </div>
-    </header>
-
-    <main id="contenido">
-      <section class="hero" id="inicio" aria-labelledby="hero-title">
-        <div class="shell hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Álbum de figuritas · Uruguay</p>
-            <h1 id="hero-title">
-              La fauna uruguaya<br />
-              <span>entra en juego.</span>
-            </h1>
-            <p class="hero-lead">
-              Una aventura para descubrir animales autóctonos, salir a mirar el
-              monte y aprender en familia. Menos pantalla, más naturaleza.
-            </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#album">Conocé el álbum</a>
-              <a class="text-link" href="#experiencia">Mirá cómo se juega</a>
-            </div>
-            <ul class="hero-points" aria-label="Características principales">
-              <li>Fotografías reales</li>
-              <li>Fauna del Uruguay</li>
-              <li>Aprendizaje compartido</li>
-            </ul>
-          </div>
-
-          <div class="hero-visual" aria-label="Baqueano en una salida de exploración">
-            <figure class="hero-photo">
-              <img
-                src="assets/images/exploracion-monte.jpeg"
-                alt="Niño observando un pequeño animal durante una salida al monte"
-                width="567"
-                height="423"
-              />
-            </figure>
-            <figure class="brand-seal">
-              <img
-                src="assets/images/logo-baqueano.jpeg"
-                alt="Baqueano, álbum de figuritas, Guardián de la Naturaleza"
-                width="1080"
-                height="1080"
-              />
-            </figure>
-            <p class="field-note" aria-hidden="true">
-              <span>01</span> Mirar · Buscar<br />Reconocer · Cuidar
-            </p>
-          </div>
+    </section>
+    <section class="album-intro paper" id="que-es" aria-labelledby="album-titulo">
+      <div class="wrap intro-grid">
+        <figure class="inside-photo"><img src="assets/images/manos-album.jpg" width="1080" height="810" alt="Manos de gurises señalando las ilustraciones en una página abierta del álbum." loading="lazy"></figure>
+        <div class="intro-copy">
+          <p class="overline"><svg class="icon"><use href="#book"/></svg> El álbum</p>
+          <h2 id="album-titulo">«Tengo, tengo…<br><em>¡me falta!»</em></h2>
+          <p>Baqueano es un álbum de figuritas con fotos de animales que viven en Uruguay. Buscá dónde va la tuya, pegala y mirá cuáles te faltan.</p>
+          <p>¿Te salió repetida? Guardala para cambiar con alguien en el recreo.</p>
+          <a href="#album" class="text-arrow">Mirá dos figuritas <svg class="icon"><use href="#arrow"/></svg></a>
         </div>
-        <div class="trail-line" aria-hidden="true"></div>
-      </section>
-
-      <section class="intro section" id="que-es" aria-labelledby="que-es-title">
-        <div class="shell">
-          <div class="section-heading intro-heading">
-            <div>
-              <p class="eyebrow">Una forma distinta de aprender</p>
-              <h2 id="que-es-title">Mirar el monte con otros ojos</h2>
-            </div>
-            <p>
-              Baqueano transforma la curiosidad en una colección: cada figurita
-              invita a reconocer especies, comparar sus habilidades y volver a
-              encontrarlas afuera.
-            </p>
-          </div>
-
-          <div class="principles">
-            <article class="principle-card">
-              <span class="card-number">01</span>
-              <p class="card-kicker">Observar</p>
-              <h3>Fauna de verdad</h3>
-              <p>
-                Fotografías de animales autóctonos para aprender a reconocerlos
-                por sus rasgos, colores y ambientes.
-              </p>
-            </article>
-            <article class="principle-card principle-card-yellow">
-              <span class="card-number">02</span>
-              <p class="card-kicker">Coleccionar</p>
-              <h3>El desafío de completar</h3>
-              <p>
-                Buscar, cambiar y pegar figuritas vuelve el conocimiento una
-                experiencia que se construye de a poco.
-              </p>
-            </article>
-            <article class="principle-card principle-card-dark">
-              <span class="card-number">03</span>
-              <p class="card-kicker">Compartir</p>
-              <h3>Un juego que reúne</h3>
-              <p>
-                El álbum abre conversaciones entre gurises, familias y
-                educadores, adentro y afuera del salón.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="album section" id="album" aria-labelledby="album-title">
-        <div class="shell album-grid">
-          <div class="album-copy">
-            <p class="eyebrow eyebrow-light">Una colección para explorar</p>
-            <h2 id="album-title">Cada figurita abre una pista</h2>
-            <p>
-              El álbum combina fotografía, ilustración y datos breves para que
-              cada especie se vuelva fácil de recordar. Las huellas de color
-              ayudan a comparar energía, vista e inteligencia.
-            </p>
-            <div class="album-features" role="list" aria-label="Contenido del álbum">
-              <p role="listitem"><strong>Fotos reales</strong> de fauna autóctona</p>
-              <p role="listitem"><strong>Fichas visuales</strong> para comparar</p>
-              <p role="listitem"><strong>Escenarios</strong> del monte uruguayo</p>
-            </div>
-          </div>
-
-          <div class="collection-board">
-            <figure class="album-cover">
-              <img
-                src="assets/images/portada-album.jpeg"
-                alt="Portada del álbum Baqueano Fauna Autóctona Uruguay"
-                width="1166"
-                height="1554"
-                loading="lazy"
-              />
-              <figcaption>La puerta de entrada a la aventura</figcaption>
-            </figure>
-            <figure class="sticker sticker-one">
-              <img
-                src="assets/images/figurita-chaja.jpeg"
-                alt="Figurita del chajá fotografiado en Maldonado"
-                width="1076"
-                height="1469"
-                loading="lazy"
-              />
-            </figure>
-            <figure class="sticker sticker-two">
-              <img
-                src="assets/images/figurita-churrinche.jpeg"
-                alt="Figurita de churrinche con fotografía tomada en Flores"
-                width="1057"
-                height="1448"
-                loading="lazy"
-              />
-            </figure>
-            <span class="board-label" aria-hidden="true">Colección de campo</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="experience section" id="experiencia" aria-labelledby="experiencia-title">
-        <div class="shell">
-          <div class="section-heading experience-heading">
-            <div>
-              <p class="eyebrow">Ya está pasando</p>
-              <h2 id="experiencia-title">El álbum sale a jugar</h2>
-            </div>
-            <p>
-              En el monte, en casa o en ronda: Baqueano convierte la búsqueda de
-              figuritas en una excusa para mirar, preguntar y compartir.
-            </p>
-          </div>
-
-          <div class="photo-story">
-            <figure class="story-photo story-photo-tall">
-              <img
-                src="assets/images/exploradora-album.jpeg"
-                alt="Niña mostrando el álbum Baqueano en un entorno natural"
-                width="999"
-                height="1512"
-                loading="lazy"
-              />
-              <figcaption>Descubrir afuera</figcaption>
-            </figure>
-            <figure class="story-photo story-photo-wide">
-              <img
-                src="assets/images/album-en-grupo.jpeg"
-                alt="Grupo de niñas compartiendo el álbum Baqueano al aire libre"
-                width="1493"
-                height="1939"
-                loading="lazy"
-              />
-              <figcaption>Aprender en ronda</figcaption>
-            </figure>
-            <figure class="story-photo story-photo-home">
-              <img
-                src="assets/images/album-en-casa.jpeg"
-                alt="Niña completando el álbum Baqueano en familia"
-                width="1536"
-                height="2048"
-                loading="lazy"
-              />
-              <figcaption>Completar en familia</figcaption>
-            </figure>
-            <blockquote class="story-quote">
-              <p>Desconectarse un rato para volver a conectar con lo que vive cerca.</p>
-              <cite>El espíritu Baqueano</cite>
-            </blockquote>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact section" id="contacto" aria-labelledby="contacto-title">
-        <div class="shell contact-panel">
-          <div class="contact-mark" aria-hidden="true">B</div>
-          <div>
-            <p class="eyebrow eyebrow-light">Comunidad Baqueana</p>
-            <h2 id="contacto-title">¿Querés acercar el álbum a tu comunidad?</h2>
-            <p>
-              Estamos preparando los canales oficiales para familias,
-              educadores y organizaciones. Muy pronto vas a poder encontrarlos
-              acá.
-            </p>
-          </div>
-          <a class="button button-yellow" href="#inicio">Volver al comienzo</a>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="shell footer-inner">
-        <a class="footer-brand" href="#inicio">BAQUEANO</a>
-        <p>Guardianes de la naturaleza · Uruguay</p>
-        <p>© <span data-year>2026</span> Baqueano</p>
       </div>
-    </footer>
-  </body>
+    </section>
+    <section class="field-game" id="album" aria-labelledby="game-title">
+      <div class="wrap">
+        <div class="game-intro">
+          <div><p class="overline"><svg class="icon"><use href="#paw"/></svg> Juego de pistas</p><h2 id="game-title">¿Quién anda ahí?</h2></div>
+          <p>Mirá las fotos sin espiar el nombre. Decí en voz alta qué ave te parece que es. Después, fijate si acertaste.</p>
+        </div>
+        <div class="bird-grid">
+          <article class="bird-card">
+            <figure><img src="assets/images/pista-chaja.jpg" width="718" height="475" alt="Ave gris con un collar negro y un copete." loading="lazy"><figcaption>Foto de Maxi Oruga · Maldonado</figcaption></figure>
+            <div class="bird-body"><span class="folio">Figurita 35</span><h3>Llevo un collar negro.<br>¿Me reconocés?</h3>
+              <details><summary><span class="closed-label">Ver quién es</span><span class="open-label">Ocultar respuesta</span><span class="plus" aria-hidden="true"></span></summary>
+                <div class="answer"><strong>¡El chajá!</strong> Fijate en las plumas que tiene levantadas en la cabeza. <a href="assets/images/figurita-chaja.jpeg">Ver la figurita entera</a></div>
+              </details>
+            </div>
+          </article>
+          <article class="bird-card">
+            <figure><img src="assets/images/pista-churrinche.jpg" width="718" height="418" alt="Dos pájaros en unas ramas. Uno tiene el pecho rojo." loading="lazy"><figcaption>Foto de Paula Andregnette · Flores</figcaption></figure>
+            <div class="bird-body"><span class="folio">Figurita 11</span><h3>A uno lo delata el rojo.<br>¿Ya lo sacaste?</h3>
+              <details><summary><span class="closed-label">Ver quién es</span><span class="open-label">Ocultar respuesta</span><span class="plus" aria-hidden="true"></span></summary>
+                <div class="answer"><strong>¡El churrinche!</strong> En la foto hay dos. ¿Cuál viste primero? <a href="assets/images/figurita-churrinche.jpeg">Ver la figurita entera</a></div>
+              </details>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="family paper" id="experiencia" aria-labelledby="familia-titulo">
+      <div class="wrap family-grid">
+        <div class="family-copy">
+          <p class="overline"><svg class="icon sun"><use href="#sun"/></svg> En familia</p>
+          <h2 id="familia-titulo">¿Y si lo vemos<br><em>en la plaza?</em></h2>
+          <p>Antes de salir, elijan una figurita entre todos. Fíjense en un detalle, como el color del pecho o la forma del pico.</p>
+          <p>En el paseo, prueben mirar un rato en silencio. Si aparece un pájaro distinto, también vale. ¿Qué detalle les llamó la atención?</p>
+        </div>
+        <div class="family-prints">
+          <figure class="family-main"><img src="assets/images/ronda.jpg" loading="lazy" width="880" height="1061" alt="Gurisas reunidas bajo un árbol para mirar el álbum juntas."></figure>
+          <figure class="family-small"><img src="assets/images/album-en-casa.jpeg" loading="lazy" width="1536" height="2048" alt="Una niña pega figuritas en el álbum en casa."></figure>
+        </div>
+      </div>
+    </section>
+    <section id="chasques" class="chasques paper" aria-labelledby="chasque-title">
+      <div class="wrap chasque-grid">
+        <figure class="chasque-art"><img src="assets/images/chasque.jpg" loading="lazy" width="660" height="877" alt="Ilustración de una chasque a caballo con un bolso de Baqueano."></figure>
+        <div class="chasque-copy">
+          <p class="overline">Red de Chasques</p>
+          <h2 id="chasque-title">Un álbum para<br>otra escuela.</h2>
+          <p>Antes, un chasque llevaba mensajes de un lugar a otro. En Baqueano, le decimos chasque a quien da una mano para que el álbum y las figuritas lleguen a una escuela rural.</p>
+          <div id="contacto" class="share-box">
+            <p>¿Conocés a alguien que se coparía con la idea? Pasale esta página.</p>
+            <button class="button share" type="button" data-share hidden>Compartir Baqueano <svg class="icon"><use href="#share"/></svg></button>
+            <div data-share-fallback hidden><label for="share-url">Enlace para compartir</label><div class="copy-row"><input id="share-url" data-share-url type="url" readonly><button type="button" data-copy>Copiar</button></div></div>
+            <p class="share-status" data-share-status role="status"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-row">
+    <a class="brand" href="#inicio"><img src="assets/images/logo-baqueano.jpeg" width="46" height="46" alt=""><span><strong>Baqueano</strong><small>Álbum de figuritas</small></span></a>
+    <p>Hecho en Uruguay <svg class="icon"><use href="#sun"/></svg></p>
+    <a href="#contacto">Compartí el álbum</a><a href="#inicio">Volver arriba ↑</a>
+  </div></footer>
+</body>
 </html>
