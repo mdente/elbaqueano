@@ -84,7 +84,7 @@
           </dl>
           <div class="actions">
             <a class="button primary" href="https://wa.link/2wpqpj">Consultá por el álbum <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a>
-            <a href="#album" class="text-arrow">Mirá dos figuritas <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a>
+            <a href="#album" class="text-arrow">Mirá las figuritas <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a>
           </div>
         </div>
       </div>
@@ -93,9 +93,14 @@
       <div class="wrap">
         <div class="game-intro">
           <div><p class="overline"><svg class="icon"><use href="#paw"/></svg> Juego de pistas</p><h2 id="game-title">¿Quién anda ahí?</h2></div>
-          <p>Mirá las fotos sin espiar el nombre. Decí en voz alta qué ave te parece que es. Después, fijate si acertaste.</p>
+          <p>Deslizá para pasar de una figurita a otra. Mirá la foto o la ilustración, decí qué animal te parece que es y después revelá la respuesta.</p>
         </div>
-        <div class="bird-grid">
+        <div class="clue-controls" data-clue-controls hidden>
+          <button type="button" aria-controls="figuritas" data-clue-prev>← Anterior</button>
+          <p role="status" aria-atomic="true" data-clue-status></p>
+          <button type="button" aria-controls="figuritas" data-clue-next>Siguiente →</button>
+        </div>
+        <div class="clue-track" id="figuritas" role="group" aria-label="Figuritas del juego" tabindex="0" data-clue-track>
           <article class="bird-card">
             <figure><img src="assets/images/pista-chaja.jpg" width="718" height="475" alt="Ave gris con un collar negro y un copete." loading="lazy"><figcaption>Foto de Maxi Oruga · Maldonado</figcaption></figure>
             <div class="bird-body"><span class="folio">Figurita 35</span><h3>Llevo un collar negro.<br>¿Me reconocés?</h3>
@@ -109,6 +114,39 @@
             <div class="bird-body"><span class="folio">Figurita 11</span><h3>A uno lo delata el rojo.<br>¿Ya lo sacaste?</h3>
               <details><summary><span class="closed-label">Ver quién es</span><span class="open-label">Ocultar respuesta</span><span class="plus" aria-hidden="true"></span></summary>
                 <div class="answer"><strong>¡El churrinche!</strong> En la foto hay dos. ¿Cuál viste primero? <a href="assets/images/figurita-churrinche.jpeg">Ver la figurita entera</a></div>
+              </details>
+            </div>
+          </article>
+          <article class="bird-card">
+            <figure class="clue-crop">
+              <img src="assets/images/pista-coendu.webp" width="300" height="260" alt="Animal cubierto de púas sobre una rama." loading="lazy">
+              <figcaption>Detalle del álbum Baqueano</figcaption>
+            </figure>
+            <div class="bird-body"><span class="folio">Figurita 15</span><h3>Tengo púas y trepo a los árboles.</h3>
+              <details><summary><span class="closed-label">Ver quién es</span><span class="open-label">Ocultar respuesta</span><span class="plus" aria-hidden="true"></span></summary>
+                <div class="answer"><strong>¡El coendú!</strong> Su cola le ayuda a agarrarse de las ramas cuando trepa.</div>
+              </details>
+            </div>
+          </article>
+          <article class="bird-card">
+            <figure class="clue-crop">
+              <img src="assets/images/pista-comadreja-overa.webp" width="480" height="480" alt="Ilustración de un animal de hocico puntiagudo con sus crías en el lomo." loading="lazy">
+              <figcaption>Ilustración de Baqueano · Instagram</figcaption>
+            </figure>
+            <div class="bird-body"><span class="folio">Figurita 24</span><h3>Mis crías viajan conmigo.</h3>
+              <details><summary><span class="closed-label">Ver quién es</span><span class="open-label">Ocultar respuesta</span><span class="plus" aria-hidden="true"></span></summary>
+                <div class="answer"><strong>¡La comadreja overa!</strong> Es un marsupial. Sus crías crecen al principio en una bolsa en el vientre. <a href="https://www.instagram.com/baqueano.album/p/DfBVzDWsroE/">Ver la ilustración original en Instagram</a></div>
+              </details>
+            </div>
+          </article>
+          <article class="bird-card">
+            <figure class="clue-crop">
+              <img src="assets/images/pista-culebra-verde.webp" width="300" height="260" alt="Animal verde y alargado que se confunde con las ramas." loading="lazy">
+              <figcaption>Detalle del álbum Baqueano</figcaption>
+            </figure>
+            <div class="bird-body"><span class="folio">Figurita 28</span><h3>Entre las hojas casi no me ves.</h3>
+              <details><summary><span class="closed-label">Ver quién es</span><span class="open-label">Ocultar respuesta</span><span class="plus" aria-hidden="true"></span></summary>
+                <div class="answer"><strong>¡La culebra verde esmeralda!</strong> Su color la ayuda a confundirse con las hojas cuando trepa.</div>
               </details>
             </div>
           </article>

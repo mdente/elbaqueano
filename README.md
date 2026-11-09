@@ -1,6 +1,6 @@
 # Baqueano
 
-Sitio del álbum de figuritas Baqueano, dedicado a la fauna autóctona del Uruguay. Incluye dos pistas para reconocer aves a partir de las fotos de las figuritas, una misión de cuaderno de campo para hacer en familia, la Red de Chasques y una selección de historias del Instagram del proyecto.
+Sitio del álbum de figuritas Baqueano, dedicado a la fauna autóctona del Uruguay. Incluye un carrusel de pistas para reconocer animales a partir de fotos e ilustraciones, una misión de cuaderno de campo para hacer en familia, la Red de Chasques y una selección de historias del Instagram del proyecto.
 
 ## Ejecución local
 
@@ -23,3 +23,5 @@ No se deben incorporar credenciales, tokens ni certificados al repositorio.
 - Las novedades son una selección editorial de [@baqueano.album](https://www.instagram.com/baqueano.album/). Cada historia enlaza la publicación original y el contacto de WhatsApp sale de la bio del perfil.
 - El formato del álbum y las cifras de especies y fotógrafos provienen de [la cobertura de Punto Sur](https://www.puntosur.lat/noticia/baqueano-el-proyecto-familiar-de-figuritas-que-difunde-la-fauna-autoctona-en-escuelas-y-hogares-7951-x2pr).
 - La modalidad de padrinazgo se describe en [la publicación de la Red de Chasques](https://www.instagram.com/baqueano.album/p/DfUUUKIKCuu/).
+
+- Las pistas del coendú (15) y la culebra verde esmeralda (28) se recortaron de fotos del álbum. La pista de la comadreja (24 en el álbum) usa [la ilustración publicada por Baqueano](https://www.instagram.com/baqueano.album/p/DfBVzDWsroE/).

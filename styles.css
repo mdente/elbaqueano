@@ -94,9 +94,18 @@ nav a:hover, .footer-row a:hover { text-decoration: underline; }
 .game-intro .overline { color: #f7d66e; }
 .game-intro > p { max-width: 26rem; margin-bottom: .25rem; }
 .bird-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(20px, 2.7vw, 38px); align-items: start; }
+.clue-controls { display: flex; justify-content: flex-end; align-items: center; gap: .65rem; margin: -.7rem 0 .6rem; }
+.clue-controls button { min-height: 44px; padding: .35rem .7rem; border: 1px solid #f7d66e; border-radius: 999px; background: var(--paper); color: var(--ink); font-family: var(--display); font-size: .9rem; font-weight: 730; }
+.clue-controls button:enabled:hover { background: #f7d66e; }
+.clue-controls button:disabled { opacity: .55; cursor: default; }
+.clue-controls p { font-size: .88rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.clue-controls button:focus-visible, .clue-track:focus-visible { outline-color: var(--gold); }
+.clue-track { --clue-gap: clamp(20px, 2.7vw, 38px); display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - var(--clue-gap)) / 2); gap: var(--clue-gap); align-items: start; overflow-x: auto; padding: 5px 5px 13px; scroll-snap-type: x mandatory; scroll-padding-inline: 5px; scrollbar-width: thin; scrollbar-color: var(--gold) #183c2a; }
+.clue-track > .bird-card { scroll-snap-align: start; }
 .bird-card { padding: 10px; background: var(--paper) url("assets/papel.svg"); border-radius: 12px; color: var(--ink); box-shadow: 0 6px 0 #183c2a; }
 .bird-card figure { position: relative; }
 .bird-card figure img { width: 100%; aspect-ratio: 1.99; object-fit: cover; border-radius: 5px; }
+.bird-card .clue-crop img { object-fit: contain; background: #e9dfc9; }
 .bird-card figcaption { padding: 2px 7px; position: absolute; right: .55rem; bottom: .5rem; background: #102519da; border-radius: 3px; color: #fff; font-size: .71rem; font-weight: 570; }
 .bird-body { padding: 1rem clamp(12px, 1.7vw, 28px) .4rem; }
 .folio { display: block; font-size: .76rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 800; color: var(--rust); margin-bottom: .55rem; }
@@ -191,6 +200,8 @@ footer { background: #fbf8ef; border-top: 1px solid var(--rule); }
   .game-intro { align-items: start; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
   .game-intro > p { max-width: 32rem; }
   .bird-grid { grid-template-columns: 1fr; }
+  .clue-controls { justify-content: space-between; margin-top: -.3rem; }
+  .clue-track { grid-auto-columns: 100%; }
   .bird-card { padding: 8px; }
   .family-prints { height: auto; aspect-ratio: 1.35; }
   .chasque-art { max-width: 340px; }

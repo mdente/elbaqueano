@@ -69,11 +69,17 @@ test("los recursos funcionan desde la ruta del proyecto en GitHub Pages", () => 
   }
 });
 
-test("ambas pistas revelan su respuesta y enlazan la figurita original", () => {
+test("las pistas del carrusel revelan sus respuestas y conservan las figuritas originales", () => {
   const pistas = [...html.matchAll(/<details>([\s\S]*?)<\/details>/g)];
-  assert.equal(pistas.length, 2);
+  assert.ok(pistas.length > 2, "el juego debe tener más de dos pistas");
+  assert.match(html, /id="figuritas"[^>]+data-clue-track/);
+  assert.match(html, /<button[^>]+aria-controls="figuritas"[^>]+data-clue-prev/);
+  assert.match(html, /<button[^>]+aria-controls="figuritas"[^>]+data-clue-next/);
+  for (const [, pista] of pistas) {
+    assert.match(pista, /<summary>[\s\S]*?Ver quién es[\s\S]*?<\/summary>/);
+    assert.match(pista, /class="answer"/);
+  }
   for (const [i, especie] of ["chaja", "churrinche"].entries()) {
-    assert.match(pistas[i][1], /<summary>[\s\S]*?Ver quién es[\s\S]*?<\/summary>/);
     assert.ok(pistas[i][1].includes(`href="assets/images/figurita-${especie}.jpeg"`));
   }
 });
