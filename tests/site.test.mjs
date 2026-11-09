@@ -11,6 +11,8 @@ const readProjectFile = (path) =>
     : "";
 
 const html = readProjectFile("index.html");
+const guidePath = "actividades-fauna-autoctona-uruguay/index.html";
+const guide = readProjectFile(guidePath);
 const css = readProjectFile("styles.css");
 const script = readProjectFile("script.js");
 
@@ -54,10 +56,13 @@ test("los recursos funcionan desde la ruta del proyecto en GitHub Pages", () => 
   assert.match(html, /href="styles\.css"/i);
   assert.match(html, /src="script\.js"/i);
   assert.match(html, /href="favicon\.svg"/i);
-  for (const [, recurso] of html.matchAll(/(?:src|href)="([^"#][^"]*)"/g)) {
-    if (recurso.startsWith("https://")) continue;
-    assert.ok(!recurso.startsWith("/"), recurso);
-    assert.ok(existsSync(resolve(projectRoot, recurso)), recurso);
+  for (const [path, document] of [["index.html", html], [guidePath, guide]]) {
+    for (const [, resource] of document.matchAll(/(?:src|href)="([^"#][^"]*)"/g)) {
+      if (resource.startsWith("https://")) continue;
+      assert.ok(!resource.startsWith("/"), resource);
+      const localPath = resource.split("#")[0];
+      assert.ok(existsSync(resolve(projectRoot, dirname(path), localPath)), resource);
+    }
   }
   for (const [, recurso] of css.matchAll(/url\("([^"]+)"\)/g)) {
     assert.ok(existsSync(resolve(projectRoot, recurso)), recurso);
@@ -102,4 +107,23 @@ test("las historias del cuaderno remiten a las publicaciones originales", () => 
       `falta el enlace a la publicación ${codigo}`,
     );
   }
+});
+
+test("el sitemap y las URL canónicas identifican la portada y la guía temática", () => {
+  const portada = "https://elbaqueano.uy/";
+  const rutaGuia = dirname(guidePath) + "/";
+  const urlGuia = portada + rutaGuia;
+  const sitemap = readProjectFile("sitemap.xml");
+  const robots = readProjectFile("robots.txt");
+
+  assert.ok(html.includes(`<link rel="canonical" href="${portada}">`));
+  assert.ok(html.includes(`href="${rutaGuia}"`));
+  assert.ok(guide.includes(`<link rel="canonical" href="${urlGuia}">`));
+  assert.match(guide, /<html lang="es-UY">/);
+  assert.match(guide, /<h1[^>]*>Actividades sobre fauna autóctona del Uruguay<\/h1>/);
+  assert.deepEqual([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url), [
+    portada,
+    urlGuia,
+  ]);
+  assert.ok(robots.includes(`Sitemap: ${portada}sitemap.xml`));
 });

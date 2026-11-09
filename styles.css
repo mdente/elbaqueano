@@ -118,6 +118,7 @@ details[open] .open-label { display: inline; }
 .field-note ol { margin: .65rem 0 0; padding-inline-start: 1.35rem; font-size: .93rem; }
 .field-note li + li { margin-top: .35rem; }
 .field-note li::marker { color: var(--rust); font-weight: 750; }
+.guide-link { margin-top: 1rem; }
 .family-prints { position: relative; height: clamp(300px, 33vw, 440px); }
 .family-main, .family-small { position: absolute; border: 7px solid #fffcf1; background: white; box-shadow: 0 5px 14px #30391e26; }
 .family-main { inset: 0 5% 3% 12%; transform: rotate(2deg); }
@@ -202,3 +203,18 @@ footer { background: #fbf8ef; border-top: 1px solid var(--rule); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+.activity-guide { max-width: 830px; padding-block: clamp(2.5rem, 7vw, 5.5rem); }
+.activity-guide h1 { font-size: clamp(2.55rem, 6vw, 4.6rem); }
+.activity-guide .lead { max-width: 38rem; }
+.guide-section { margin-top: 2.25rem; padding-top: 1.6rem; border-top: 1px solid var(--rule); }
+.guide-section h2 { font-size: clamp(1.75rem, 4vw, 2.8rem); line-height: 1.08; }
+.guide-section > p { margin-top: .85rem; }
+.guide-photos { margin-block: 1.2rem; }
+.guide-photos figure { height: 100%; padding: .55rem; border: 1px solid var(--rule); border-radius: 5px; background: #fffcf0; }
+.guide-photos img { width: 100%; aspect-ratio: 1.65; object-fit: cover; border-radius: 3px; }
+.guide-photos figcaption { padding: .6rem .25rem .15rem; font-size: .88rem; }
+.observation { margin: .65rem 0; }
+.observation div { padding-block: .4rem; border-bottom: 1px dashed var(--rule); }
+.observation dt { font-weight: 720; }
+.observation dd { margin-inline-start: 0; }
