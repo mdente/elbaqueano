@@ -21,7 +21,7 @@ test("la portada declara español de Uruguay y metadatos propios", () => {
 });
 
 test("la navegación conduce a las secciones principales", () => {
-  for (const id of ["que-es", "album", "experiencia", "chasques", "contacto"]) {
+  for (const id of ["que-es", "album", "experiencia", "chasques", "novedades", "contacto"]) {
     assert.match(html, new RegExp(`href="#${id}"`, "i"));
     assert.match(html, new RegExp(`id="${id}"`, "i"));
   }
@@ -55,6 +55,7 @@ test("los recursos funcionan desde la ruta del proyecto en GitHub Pages", () => 
   assert.match(html, /src="script\.js"/i);
   assert.match(html, /href="favicon\.svg"/i);
   for (const [, recurso] of html.matchAll(/(?:src|href)="([^"#][^"]*)"/g)) {
+    if (recurso.startsWith("https://")) continue;
     assert.ok(!recurso.startsWith("/"), recurso);
     assert.ok(existsSync(resolve(projectRoot, recurso)), recurso);
   }
@@ -85,4 +86,20 @@ test("las imágenes conservan su proporción al cambiar de ancho", () => {
 test("el menú móvil contempla navegadores con la API anterior de matchMedia", () => {
   assert.match(script, /addEventListener/);
   assert.match(script, /addListener/);
+});
+
+test("la invitación a seguir al proyecto enlaza el perfil oficial de Baqueano", () => {
+  const novedades = html.match(/<section id="novedades"[^>]*>([\s\S]*?)<\/section>/)?.[1];
+  assert.ok(novedades, "falta la sección de novedades");
+  assert.match(novedades.replace(/<[^>]+>/g, ""), /Desconectar para volver a conectar/);
+  assert.match(novedades, /href="https:\/\/www\.instagram\.com\/baqueano\.album\/"/);
+});
+
+test("las historias del cuaderno remiten a las publicaciones originales", () => {
+  for (const codigo of ["DfcYYoLxBTz", "DfW-TkXFeu3", "DfIAGOeR-es"]) {
+    assert.ok(
+      html.includes(`href="https://www.instagram.com/baqueano.album/p/${codigo}/"`),
+      `falta el enlace a la publicación ${codigo}`,
+    );
+  }
 });
